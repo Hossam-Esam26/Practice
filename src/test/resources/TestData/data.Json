@@ -1,0 +1,26 @@
+{
+  "ValidUser": {
+    "FirstName" : "Hossam",
+    "lastName" : "Ali",
+    "day" : "7",
+    "month" : "8" ,
+    "year" : "1999",
+    "Email" : "f34Aqq888d@emailbbox.pro",
+    "companyName" : "Utest",
+    "password" : "12345678",
+    "confirm_password" : "12345678"
+  },
+  "InvalidUser": {
+    "Email" : "f22b02727c@emailbbox.pro",
+    "password" : "123",
+    "confirm_password" : "123"
+  },
+  "formPage": {
+    "country" : "123",
+    "cityField" : "Cairo",
+    "addressField" : "Test",
+    "postalCodeField" : "11111",
+    "phoneNumberField" : "225588552"
+  }
+
+}
