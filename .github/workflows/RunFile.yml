@@ -12,4 +12,4 @@ jobs:
             distribution: 'temurin'
       - name: Run your automation scrip
         run: |
-          mvn test -DsuiteXmlFile=Practice/pom.xml -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
+          mvn test -DsuiteXmlFile=pom.xml -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
