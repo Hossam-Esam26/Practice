@@ -1,0 +1,8 @@
+on:
+  pull_request:  # This triggers the workflow on pull requests
+
+jobs:
+  HossamEsam:  # Replace with a descriptive name for your job
+    runs-on: ubuntu-latest  # This defines the virtual environment (replace if needed)
+    steps:
+      # ... steps to run your automation script ...
