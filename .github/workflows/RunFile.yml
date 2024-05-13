@@ -1,0 +1,17 @@
+on:
+  pull_request:  
+
+jobs:
+  HossamEsam:  
+    runs-on: ubuntu-latest  
+    steps:
+      - name: Install Java and Maven
+        uses: actions/setup-java@v3
+        with:
+            java-version: '22'  
+            distribution: 'temurin'
+      - name: Print Working Directory
+        run: pwd     
+      - name: Run your automation scrip
+        run: |
+          ./mvnw test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
