@@ -1,3 +1,4 @@
+name: Practice
 on:
   pull_request:
 
@@ -19,4 +20,7 @@ jobs:
           maven-version: 3.9.5  
       - name: Run your automation script
         run: |
-          mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
+          cd ./Practice
+          mvn package
+          
+          #mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
