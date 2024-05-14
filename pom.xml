@@ -19,6 +19,7 @@
         <commons-io>2.8.0</commons-io>
         <json-simple>1.1.1</json-simple>
         <slf4j-api>2.0.13</slf4j-api>
+        <logback>1.5.6</logback>
 
     </properties>
 
@@ -66,6 +67,12 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j-api}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback}</version>
         </dependency>
 
 
