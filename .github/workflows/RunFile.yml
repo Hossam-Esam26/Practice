@@ -1,4 +1,4 @@
-name: Runner.xml
+name: Runner
 on:
   pull_request:
 
@@ -33,9 +33,6 @@ jobs:
           
       - name: Run your automation script
         run: |
-          cd src/test/resources/Runner
-          mvn package
-         
-         # mvn package test -DsuiteXmlFile=Runner.xml
+           mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
           
           
