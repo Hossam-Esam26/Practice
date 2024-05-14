@@ -16,7 +16,7 @@ jobs:
       - name: Set up Maven 3.9.5
         uses: stCarolas/setup-maven@v4.5
         with:
-          maven-version: 4.0.0  
+          maven-version: 3.9.5  
       - name: Run your automation script
         run: |
           mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
