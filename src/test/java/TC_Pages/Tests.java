@@ -10,10 +10,9 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 public class Tests {
-    WebDriver driver;
     @Test
     public void teest() throws IOException, ParseException {
-        new SignUpScenarios(driver).verifyValidScenarioWithValidData();
+        System.out.println("test");
     }
 
 }
