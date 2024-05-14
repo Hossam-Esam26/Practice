@@ -21,9 +21,8 @@
         <slf4j-api>2.0.13</slf4j-api>
         <logback>1.5.6</logback>
 
+
     </properties>
-
-
 
     <dependencies>
 
@@ -76,8 +75,24 @@
         </dependency>
 
 
-
     </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.2.5</version>
+                    <configuration>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>src/test/resources/Runner/Runner.xml</suiteXmlFile>
+                        </suiteXmlFiles>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 
 </project>
