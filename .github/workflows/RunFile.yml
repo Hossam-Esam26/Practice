@@ -19,4 +19,4 @@ jobs:
           maven-version: 3.9.5  
       - name: Run your automation script
         run: |
-          mvn test -DsuiteXmlFile=src/test/resources/Rnner/Runner.xml
+          mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
