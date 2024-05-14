@@ -14,4 +14,4 @@ jobs:
         run: pwd
       - name: Run your automation script
         run: |
-          ./mvnw test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
+          mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
