@@ -33,7 +33,7 @@ jobs:
           
       - name: Run your automation script
         run: |
-          cd Runner.xml
+          cd Practice
           mvn package
          
          # mvn package test -DsuiteXmlFile=Runner.xml
