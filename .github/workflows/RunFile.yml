@@ -19,13 +19,12 @@ jobs:
         uses: stCarolas/setup-maven@v4.5
         with:
           maven-version: 3.9.5  
-      - name: Maven Cache (Disable)
-      - uses: actions/cache@v3  # Use cache action
+      - name: Cache Maven packages
+        uses: actions/cache@v3
         with:
-          path: ~/.m2/repository  # Cache Maven repository (optional)
-          key: ${{ runner.os }}-m2-${{ hashFiles('pom.xml') }}  # Cache key based on OS, Maven, and pom.xml changes
-          restore-keys: |  # Don't restore cache (force re-download)
-            ${{ runner.os }}-m2-
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
       - name: Run your automation script
         run: |
           mvn package test -DsuiteXmlFile=Runner.xml
