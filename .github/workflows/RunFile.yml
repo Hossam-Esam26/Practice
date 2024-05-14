@@ -33,9 +33,6 @@ jobs:
           
       - name: Run your automation script
         run: |
-           mvn test -DsuiteXmlFile=src/test/java/TC_Pages/TC_SignUp/TC_SignUpPage.java
-
-
-#src/test/resources/Runner/Runner.xml
+           mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
           
           
