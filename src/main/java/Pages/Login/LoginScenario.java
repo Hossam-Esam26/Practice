@@ -28,7 +28,7 @@ public class LoginScenario {
         catch (Exception e)
         {
             Allure.step(e.getMessage());
-            Assert.fail("testcase failed");
+            Assert.fail(e.getMessage());
         }
         return this;
     }
