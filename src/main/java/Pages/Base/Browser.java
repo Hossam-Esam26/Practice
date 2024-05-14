@@ -10,7 +10,7 @@ public class Browser {
     public static WebDriver setBrowser() {
         ChromeOptions opt = new ChromeOptions();
         opt.addArguments("--headless=new");
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(opt);
         driver.manage().window().maximize();
         driver.get(url);
         return Browser.driver;
