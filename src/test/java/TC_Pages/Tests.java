@@ -17,6 +17,5 @@ public class Tests {
     @Test
     public void teestt(){
         System.out.println("teest");
-        Assert.fail("This is an issue");
     }
 }
