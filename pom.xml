@@ -18,6 +18,7 @@
         <aspectj-version>1.9.20.1</aspectj-version>
         <commons-io>2.8.0</commons-io>
         <json-simple>1.1.1</json-simple>
+        <slf4j-api>2.0.13</slf4j-api>
 
     </properties>
 
@@ -59,6 +60,12 @@
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
             <version>${json-simple}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-api}</version>
         </dependency>
 
 
