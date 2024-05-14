@@ -6,6 +6,7 @@
             <class name="TC_Pages.TC_Login.TC_Login"/>
             <class name="TC_Pages.TC_Product.TC_SelectProduct"/>
             <class name="TC_Pages.TC_Checkout.TC_OrderCheckOut"/>
+
         </classes>
     </test>
 </suite>
