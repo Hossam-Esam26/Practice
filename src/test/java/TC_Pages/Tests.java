@@ -10,13 +10,13 @@ public class Tests {
     }
 
     @Test
-    public void teest1(){
+    public void test(){
         System.out.println("teest");
     }
 
     @Test
-    public void teest2(){
+    public void teestt(){
         System.out.println("teest");
-        Assert.fail();
+        Assert.fail("This is an issue");
     }
 }
