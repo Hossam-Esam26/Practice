@@ -8,12 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Maven Cache (Disable)
-      - uses: actions/cache@v3  # Use cache action
-        with:
-          path: ~/.m2/repository  # Cache Maven repository (optional)
-          key: ${{ runner.os }}-m2-${{ hashFiles('pom.xml') }}  # Cache key based on OS, Maven, and pom.xml changes
-          restore-keys: |  # Don't restore cache (force re-download)
-            ${{ runner.os }}-m2-
       - name: Install Java and Maven
         uses: actions/setup-java@v3
         with:
@@ -25,6 +19,13 @@ jobs:
         uses: stCarolas/setup-maven@v4.5
         with:
           maven-version: 3.9.5  
+      - name: Maven Cache (Disable)
+      - uses: actions/cache@v3  # Use cache action
+        with:
+          path: ~/.m2/repository  # Cache Maven repository (optional)
+          key: ${{ runner.os }}-m2-${{ hashFiles('pom.xml') }}  # Cache key based on OS, Maven, and pom.xml changes
+          restore-keys: |  # Don't restore cache (force re-download)
+            ${{ runner.os }}-m2-
       - name: Run your automation script
         run: |
           mvn package test -DsuiteXmlFile=Runner.xml
