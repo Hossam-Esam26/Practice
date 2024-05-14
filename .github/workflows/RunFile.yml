@@ -20,7 +20,7 @@ jobs:
           maven-version: 3.9.5  
       - name: Run your automation script
         run: |
-          mvn test Runner.xml
+          mvn test -DsuiteXmlFile=Practice/Runner.xml
           
           #cd practice
           #mvn package
