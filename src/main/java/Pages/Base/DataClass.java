@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class DataClass {
 
-    static String jsonPath = "D:/Related to me/automation repo best practice/Automation_Practice/src/test/resources/TestData/data.Json";
+    static String jsonPath = "src/test/resources/TestData/data.Json";
 
     public static String jsonData(String objectName , String dataFromJson) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
