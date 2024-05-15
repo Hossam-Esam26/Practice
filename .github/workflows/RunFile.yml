@@ -30,15 +30,18 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Pull Docker image with Allure
-        uses: actions/docker/pull@v3
-        with:
-          name: your-docker-registry/your-allure-image:latest
 
-      - name: Run tests and generate Allure reports
-        uses: docker/run@v1
-        with:
-          image: your-docker-registry/your-allure-image:latest
+      - name: Download Allure Command (Not Recommended)
+        run: |  # Download script (replace URL with a trusted source)
+          curl -sL https://raw.githubusercontent.com/allure-framework/allure2/master/allure-command/target/allure-command.jar > allure-command.jar
+      - name: Generate Allure Reports (if downloaded successfully)
+        run: |
+          if [ -f allure-command.jar ]; then
+          java -jar allure-command.jar generate allure-results/  # Adjust path if needed
+          else
+          echo "Allure command not downloaded. Skipping report generation."
+          fi
+
 
 
       - name: Run your automation script with Allure reporting
