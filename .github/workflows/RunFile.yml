@@ -36,6 +36,8 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Install allure-command
+        run: npm install -g allure-command
 
 
       - name: Run your automation script with Allure reporting
