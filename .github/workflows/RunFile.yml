@@ -29,12 +29,7 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
         env:
-          MAVEN_OPTS: "-DskipTests=false"
-          
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: my-data-artifact
+          MAVEN_OPTS: "-DskipTests=false" 
           
       - name: Run your automation script
         run: |
