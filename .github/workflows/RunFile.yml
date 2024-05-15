@@ -36,11 +36,7 @@ jobs:
           curl -sL https://raw.githubusercontent.com/allure-framework/allure2/master/allure-command/target/allure-command.jar > allure-command.jar
       - name: Generate Allure Reports (if downloaded successfully)
         run: |
-          if [ -f allure-command.jar ]; then
-          java -jar allure-command.jar generate allure-results/  # Adjust path if needed
-          else
-          echo "Allure command not downloaded. Skipping report generation."
-          fi
+          java -jar allure-command.jar generate allure-results/
 
 
 
