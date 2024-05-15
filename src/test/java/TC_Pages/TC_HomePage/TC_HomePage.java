@@ -5,6 +5,7 @@ import Pages.HomePage.HomePage;
 import io.qameta.allure.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -16,7 +17,7 @@ public class TC_HomePage {
     HomePage homePage;
 
 
-    @BeforeTest
+    @BeforeMethod
     public void openWebSite()
     {
         driver = Browser.setBrowser();
