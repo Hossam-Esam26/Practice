@@ -34,7 +34,6 @@ jobs:
         uses: actions/setup-node@v3  # Install Node.js and npm if needed
         with:
           node-version: '16'        # Adjust if needed
-      - name: Install allure-command globally
         run: |                     # Install allure-command globally
           npm install -g allure-command
 
