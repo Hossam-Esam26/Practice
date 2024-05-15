@@ -30,12 +30,13 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-#      - name: Install allure-command (Optional for local report generation)
- #       uses: actions/setup-node@v3  # Install Node.js and npm if needed
-  #      with:
-  #        node-version: '16'        # Adjust if needed
-  #      run: |                     # Install allure-command globally
-  #        npm install -g allure-command
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Adjust if needed
+      - name: Install allure-command
+        run: npm install -g allure-command
+
 
       - name: Run your automation script with Allure reporting
         env:
