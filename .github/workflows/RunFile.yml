@@ -31,10 +31,7 @@ jobs:
         env:
           MAVEN_OPTS: "-DskipTests=false" 
           
-      - name: Run your automation script
-        env:
-          MAVEN_OPTS: "-DskipTests=false"
-          TEST_DATA_PATH: "/home/runner/work/Practice/Practice/src/test/resources/TestData/data.Json" 
+      - name: Run your automation script 
         run: |
            mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
           
