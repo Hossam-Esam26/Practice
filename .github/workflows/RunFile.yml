@@ -59,8 +59,8 @@ jobs:
         env:
           SLACK_BOT_TOKEN: xoxb-7125242232084-7116237564438-GbsJAU9ZmLtJkFuHrzDM26T1
         with:
-          channel: '#your-slack-channel'
-          message: "Tests completed! ${{ if eq(job.status, 'success'), '✅', '❌' }}"  # Add emojis
+          channel: 'report'
+          message: "Tests completed!"  # Add emojis
           files: path/to/report.json  # Upload report directly (limited file size)
           # OR (if uploaded to GitHub Pages):
           # ${{ if eq(steps.upload-report.outputs.success, 'true'), format('[{0}](https://your-github-domain.com/your-repo/tree/gh-pages/allure-results)', 'See the Allure Report:') }}
