@@ -33,7 +33,7 @@ jobs:
       - name: Install Node.js and npm
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Adjust if needed
+          node-version: '20'  # Adjust if needed
       - name: Install allure-command
         run: npm install -g allure-command
 
