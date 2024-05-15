@@ -1,69 +1,30 @@
-name: Run Tests
-
+name: Runner
 on:
-  pull_request:  # Or push if you prefer
-
+  pull_request:
 jobs:
-  run_tests:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4  # Checkout code from GitHub repository
-
+      - uses: actions/checkout@v4
       - name: Install Java and Maven
         uses: actions/setup-java@v3
         with:
-          java-version: '22'  # Adjust if needed for your project
+          java-version: '22'
           distribution: adopt
-
-      - name: Print Working Directory (Optional)
-        run: pwd  # Useful for debugging, can be removed
-
+      - name: Print Working Directory
+        run: pwd
       - name: Set up Maven 3.9.5
         uses: stCarolas/setup-maven@v4.5
         with:
           maven-version: 3.9.5
-
       - name: Cache Maven packages
         uses: actions/cache@v3
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-
-
- #     - name: Install Node.js and npm
- #       uses: actions/setup-node@v3
- #       with:
- #         node-version: '16'
-
- #     - name: Install allure-command
- #       run: npm install -g allure-command
-
-
-      - name: Run your automation script with Allure reporting
         env:
           MAVEN_OPTS: "-DskipTests=false"
+      - name: Run your automation script
         run: |
-          mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
-
-#      - name: Generate Allure Reports (Optional, locally)
-#        run: allure generate allure-results/  # Adjust path if needed
-
-#      - name: Upload Allure Report to GitHub Pages (Optional)
-#        uses: peaceiris/actions-gh-pages@v3  # Requires GitHub Pages setup
-#        env:
-#          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use a PAT if necessary
-#        with:
-#          PUBLISH_DIR: allure-results  # Adjust path if needed
-
-      - name: Send Slack Notification with Report Link (or Upload Report)
-        uses: slackapi/slack-github-action@v1.23.0  # Requires Slack integration
-        env:
-          SLACK_BOT_TOKEN: xoxb-7125242232084-7116237564438-GbsJAU9ZmLtJkFuHrzDM26T1
-        with:
-          channel-id: 'C073LKH1F27'
-          channel: 'report'
-          message: "Tests completed!"  # Add emojis
-          files: path/to/report.json  # Upload report directly (limited file size)
-          # OR (if uploaded to GitHub Pages):
-          # ${{ if eq(steps.upload-report.outputs.success, 'true'), format('[{0}](https://your-github-domain.com/your-repo/tree/gh-pages/allure-results)', 'See the Allure Report:') }}
+           mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
