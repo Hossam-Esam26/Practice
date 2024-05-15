@@ -31,13 +31,13 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
 
-      - name: Install Node.js and npm
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
+ #     - name: Install Node.js and npm
+ #       uses: actions/setup-node@v3
+ #       with:
+ #         node-version: '16'
 
-      - name: Install allure-command
-        run: npm install -g allure-command
+ #     - name: Install allure-command
+ #       run: npm install -g allure-command
 
 
       - name: Run your automation script with Allure reporting
@@ -46,15 +46,15 @@ jobs:
         run: |
           mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
 
-      - name: Generate Allure Reports (Optional, locally)
-        run: allure generate allure-results/  # Adjust path if needed
+#      - name: Generate Allure Reports (Optional, locally)
+#        run: allure generate allure-results/  # Adjust path if needed
 
-      - name: Upload Allure Report to GitHub Pages (Optional)
-        uses: peaceiris/actions-gh-pages@v3  # Requires GitHub Pages setup
-        env:
-          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use a PAT if necessary
-        with:
-          PUBLISH_DIR: allure-results  # Adjust path if needed
+#      - name: Upload Allure Report to GitHub Pages (Optional)
+#        uses: peaceiris/actions-gh-pages@v3  # Requires GitHub Pages setup
+#        env:
+#          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use a PAT if necessary
+#        with:
+#          PUBLISH_DIR: allure-results  # Adjust path if needed
 
       - name: Send Slack Notification with Report Link (or Upload Report)
         uses: slackapi/slack-github-action@v1.23.0  # Requires Slack integration
