@@ -42,6 +42,7 @@ public class SignUpScenarios {
         catch (Exception e)
         {
             Allure.step("Create Account Done");
+            Assert.fail(e.getMessage());
         }
         return this;
     }

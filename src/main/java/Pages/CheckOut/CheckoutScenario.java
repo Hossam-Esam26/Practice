@@ -63,7 +63,7 @@ public class CheckoutScenario {
         catch (Exception e)
         {
             Allure.step(e.getMessage());
-            Assert.fail("testcase failed");
+            Assert.fail("testcase failed" + e.getMessage());
         }
         return this;
     }

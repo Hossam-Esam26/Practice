@@ -36,7 +36,7 @@ public class ProductScenarios {
        catch (Exception e)
        {
            Allure.step(e.getMessage());
-           Assert.fail("Testcase failed");
+           Assert.fail("Testcase failed" + e.getMessage());
        }
         return this;
     }
