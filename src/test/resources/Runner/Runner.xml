@@ -4,9 +4,9 @@
         <classes>
             <class name="TC_Pages.TC_HomePage.TC_HomePage"/>
             <class name="TC_Pages.TC_SignUp.TC_SignUpPage"/>
-           <!-- <class name="TC_Pages.TC_Login.TC_Login"/>
+            <class name="TC_Pages.TC_Login.TC_Login"/>
             <class name="TC_Pages.TC_Product.TC_SelectProduct"/>
-            <class name="TC_Pages.TC_Checkout.TC_OrderCheckOut"/>-->
+            <class name="TC_Pages.TC_Checkout.TC_OrderCheckOut"/>
         </classes>
     </test>
 </suite>
