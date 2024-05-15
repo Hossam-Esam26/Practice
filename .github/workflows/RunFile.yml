@@ -33,7 +33,6 @@ jobs:
           
       - name: Run your automation script
         run: |
-           mv src/test/resources/TestData/data.Json 
            mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
           
           
