@@ -7,7 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+      - name: Set data path
+        run: echo "DATA_PATH=src/test/resources/TestData" >> $GITHUB_ENV
+        
       - name: Install Java and Maven
         uses: actions/setup-java@v3
         with:
