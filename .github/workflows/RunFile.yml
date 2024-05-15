@@ -31,6 +31,11 @@ jobs:
         env:
           MAVEN_OPTS: "-DskipTests=false"
           
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: my-data-artifact
+          
       - name: Run your automation script
         run: |
            mvn test -DsuiteXmlFile=src/test/resources/Runner/Runner.xml
