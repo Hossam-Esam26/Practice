@@ -30,12 +30,15 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Install Node.js and npm
-        uses: actions/setup-node@v3
+      - name: Pull Docker image with Allure
+        uses: actions/docker/pull@v3
         with:
-          node-version: '20'  # Adjust if needed
-      - name: Install allure-command
-        run: npm install -g allure-command
+          name: your-docker-registry/your-allure-image:latest
+
+      - name: Run tests and generate Allure reports
+        uses: docker/run@v1
+        with:
+          image: your-docker-registry/your-allure-image:latest
 
 
       - name: Run your automation script with Allure reporting
