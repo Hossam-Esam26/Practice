@@ -61,9 +61,7 @@ jobs:
         env:
           SLACK_BOT_TOKEN: xoxb-7125242232084-7116237564438-GbsJAU9ZmLtJkFuHrzDM26T1
         with:
-          channel-id: 'C073LKH1F27'
-          channel: 'report'
-          message: "Tests completed!"  # Add emojis
-          files: path/to/report.json  # Upload report directly (limited file size)
+          channel: 'C073LKH1F27'  # Replace with your channel ID
+          message: "Tests completed! ${{ if eq(job.status, 'success'), '✅', '❌' }}"
           # OR (if uploaded to GitHub Pages):
           # ${{ if eq(steps.upload-report.outputs.success, 'true'), format('[{0}](https://your-github-domain.com/your-repo/tree/gh-pages/allure-results)', 'See the Allure Report:') }}
