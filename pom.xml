@@ -92,6 +92,16 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <includes>
+                    <include>**/*.Json</include>
+                </includes>
+            </testResource>
+        </testResources>
+
     </build>
 
 
