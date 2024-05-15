@@ -33,17 +33,6 @@ public class TC_HomePage {
         homePage.checkWebSiteTitle()
                 .takeScreenShot();
     }
-
-    @Test (description = "Open the website home page")
-    @Story("Open the home page")
-    @Description("Open the website and check if this is the right website and take screenshot")
-    public void homePaget()
-    {
-        homePage = new HomePage(driver);
-        homePage.checkWebSiteTitle()
-                .takeScreenShot();
-    }
-
     @AfterMethod
     public void quit()
     {
